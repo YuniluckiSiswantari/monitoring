@@ -1,0 +1,51 @@
+<?php
+include("connect.php");
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+window.onload = function() {
+
+var options = {
+	animationEnabled: true,
+	exportEnabled: true,
+	title: {
+		text: "Tesla Motors Stock Price - 2017"
+	},
+	axisX: {
+		valueFormatString: "MMM"
+	},
+	axisY: {
+		title: "Price",
+		includeZero: false,
+		prefix: "$"
+	},
+	data: [{
+		type: "area",
+      	xValueFormatString: "DD MMM",
+		yValueFormatString: "$##0.00",
+		dataPoints: [
+			{ x: new Date (2017, 09, 01), y: 3431 },
+            { x: new Date (2017, 09, 02), y: 3446 },
+            { x: new Date (2017, 10, 03), y: 3435 },
+            { x: new Date (2017, 10, 04), y: 3430 },
+            { x: new Date (2017, 10, 05), y: 3413 },
+            { x: new Date (2017, 10, 06), y: 3445 },
+            { x: new Date (2017, 10, 07), y: 3480 },
+            { x: new Date (2017, 10, 08), y: 3487 },
+		]
+	}]
+};
+$("#chartContainer").CanvasJSChart(options);
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
+</html>
